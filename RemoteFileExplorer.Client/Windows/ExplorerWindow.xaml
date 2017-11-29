@@ -1,0 +1,37 @@
+﻿<Window x:Class="RemoteFileExplorer.Client.Windows.ExplorerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteFileExplorer.Client.Windows"
+        mc:Ignorable="d"
+        Title="ExplorerWindow" WindowStartupLocation="CenterScreen" Height="600" Width="800" ResizeMode="CanMinimize">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Drive:" Grid.Row="0" Grid.Column="0" Height="30" HorizontalAlignment="Right"/>
+        <Label Content="Path:" Grid.Row="0" Grid.Column="2" Height="30" HorizontalAlignment="Right"/>
+        <ComboBox x:Name="CbDrives" Grid.Row="0" Grid.Column="1" Margin="10,10" SelectionChanged="CbDrives_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="BtnBackFromDir" Content="←" Grid.Row="0" Grid.Column="3" Margin="20,10,0,10" Click="BtnBackFromDir_Click"></Button>
+        <TextBox x:Name="TbCurrentPath" Grid.Row="0" Grid.Column="4" IsReadOnly="True" Margin="1, 10, 20, 10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <ListBox x:Name="LbFileTree" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20" Background="FloralWhite" MouseDoubleClick="LbFileTree_MouseDoubleClick">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="CmiCopy" Header="Copy" Click="CmiCopy_OnClick"></MenuItem>
+                    <MenuItem Name="CmiPaste" Header="Paste" Click="CmiPaste_OnClick"></MenuItem>
+                    <MenuItem Name="CmiCut" Header="Cut" Click="CmiCut_OnClick"></MenuItem>
+                    <MenuItem Name="CmiDelete" Header="Delete" Click="CmiDelete_OnClick"></MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+    </Grid>
+</Window>
