@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RemoteFileExplorer.Middleware.Data.DirectoryObjectInfo">
+    <Position X="1.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACCAAAAAAAAAQAAAAAAQAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\DirectoryObjectInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Middleware.Data.FileObjectInfo">
+    <Position X="4.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAQAAAAAAQAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\FileObjectInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Middleware.Data.FileSystemObjectInfo">
+    <Position X="2.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAIEAAAAAQQAAAAAQAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\FileSystemObjectInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="RemoteFileExplorer.Middleware.Data.IFileSystemObjectPrototype">
+    <Position X="2.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\IFileSystemObjectPrototype.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

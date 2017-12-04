@@ -39,13 +39,27 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chains\DirectoryObjectInfoCreationHandler.cs" />
+    <Compile Include="Chains\FileObjectInfoCreationHandler.cs" />
+    <Compile Include="Chains\FileSystemObjectInfoCreationHandler.cs" />
+    <Compile Include="Factories\DirectoryObjectInfoFactory.cs" />
+    <Compile Include="Factories\FileObjectInfoFactory.cs" />
+    <Compile Include="Factories\FileSystemObjectInfoFactory.cs" />
     <Compile Include="Network\ServerEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FileExplorerCopyService.cs" />
+    <Compile Include="Services\FileExplorerDeleteService.cs" />
+    <Compile Include="Services\FileExplorerGetInfoService.cs" />
+    <Compile Include="Services\FileExplorerMoveService.cs" />
     <Compile Include="Services\FileExplorerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Diagrams\ChainOfResponsibility.cd" />
+    <None Include="Diagrams\Facade.cd" />
+    <None Include="Diagrams\FactoryMethod.cd" />
+    <None Include="Diagrams\Singleton.cd" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

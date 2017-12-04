@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,9 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\FileObjectInfo.cs" />
+    <Compile Include="Data\IFileSystemObjectPrototype.cs" />
+    <Compile Include="Data\DirectoryObjectInfo.cs" />
+    <Compile Include="Data\FileSystemObjectInfo.cs" />
+    <Compile Include="Data\OperationResult.cs" />
     <Compile Include="Network\IServerEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Diagrams\Prototype.cd" />
+    <None Include="Diagrams\Composite.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

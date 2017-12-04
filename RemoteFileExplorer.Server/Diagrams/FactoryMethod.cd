@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RemoteFileExplorer.Server.Factories.DirectoryObjectInfoFactory">
+    <Position X="1.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\DirectoryObjectInfoFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Factories.FileObjectInfoFactory">
+    <Position X="4.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\FileObjectInfoFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Factories.FileSystemObjectInfoFactory">
+    <Position X="3" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\FileSystemObjectInfoFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

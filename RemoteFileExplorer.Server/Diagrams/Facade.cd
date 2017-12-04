@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RemoteFileExplorer.Server.Services.FileExplorerCopyService">
+    <Position X="1.25" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Services\FileExplorerCopyService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Services.FileExplorerDeleteService">
+    <Position X="3.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Services\FileExplorerDeleteService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Services.FileExplorerGetInfoService">
+    <Position X="3.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\FileExplorerGetInfoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Services.FileExplorerMoveService">
+    <Position X="1.25" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\FileExplorerMoveService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Services.FileExplorerService">
+    <Position X="6" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIAAAAAAAAAAAQAMEgAAQAAAAAQBUAAAAAEAA=</HashCode>
+      <FileName>Services\FileExplorerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

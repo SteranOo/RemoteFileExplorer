@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RemoteFileExplorer.Server.Chains.DirectoryObjectInfoCreationHandler">
+    <Position X="2" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chains\DirectoryObjectInfoCreationHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Chains.FileObjectInfoCreationHandler">
+    <Position X="5.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chains\FileObjectInfoCreationHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteFileExplorer.Server.Chains.FileSystemObjectInfoCreationHandler">
+    <Position X="3.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Chains\FileSystemObjectInfoCreationHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

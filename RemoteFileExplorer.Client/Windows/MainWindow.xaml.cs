@@ -6,10 +6,8 @@ using System;
 
 namespace RemoteFileExplorer.Client.Windows
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-        private Window _explorerWindow;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -19,33 +17,26 @@ namespace RemoteFileExplorer.Client.Windows
 
         private void BtnConnect_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(TbAddress.Text))
+            if (string.IsNullOrEmpty(TbAddress.Text))
+                return;
+
+            try
             {
-                try
-                {
-                    var serverProxy = new ServiceClientFactory<IServerEngine>().Create(TbAddress.Text);
-                    serverProxy.Connect();
-                    Hide();
-                    try
-                    {
-                        _explorerWindow = new ExplorerWindow(serverProxy);
-                        _explorerWindow.ShowDialog();
-                    }
-                    catch (Exception ex)
-                    {
-                        if (_explorerWindow != null)
-                        {
-                            _explorerWindow.Close();
-                            MessageBox.Show("Operation ended with error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                    }
-                    Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Invalid address", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                var serverProxy = new ServiceClientFactory<IServerEngine>().Create(TbAddress.Text);
+                var result = serverProxy.Connect();
+                if (!result.Success)
+                    return;
+
+                Hide();
+                var explorerWindow = new ExplorerWindow(serverProxy);
+                explorerWindow.ShowDialog();
+                Show();
             }
+            catch
+            {
+                MessageBox.Show("Cannot connect to server", "Connection error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+           
         }
     }
 }

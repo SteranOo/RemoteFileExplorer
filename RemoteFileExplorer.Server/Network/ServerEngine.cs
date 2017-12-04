@@ -2,62 +2,85 @@
 using System.Collections.Generic;
 using System.IO;
 using System.ServiceModel;
+using RemoteFileExplorer.Middleware.Data;
 using RemoteFileExplorer.Middleware.Network;
 using RemoteFileExplorer.Server.Services;
 
 namespace RemoteFileExplorer.Server.Network
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
-    class ServerEngine : IServerEngine
+    public class ServerEngine : IServerEngine
     {
-        public void Connect()
+        private OperationResult MakeOperation(Action operation)
         {
-            Console.WriteLine("Connected");
+            try
+            {
+                operation();
+                return new OperationResult { Success = true };
+            }
+            catch (Exception ex)
+            {
+                return new OperationResult { Success = false, ErrorMessage = ex.Message };
+            }
         }
 
-        public List<string> GetLogicalDrives()
+        private OperationResult<T> MakeOperation<T>(Func<T> operation)
         {
-            return FileExplorerService.Instance.GetLogicalDrives();
+            try
+            {
+                var result = operation();
+                return new OperationResult<T> { Success = true, Response = result };
+            }
+            catch (Exception ex)
+            {
+                return new OperationResult<T> { Success = false, ErrorMessage = ex.Message };
+            }
         }
 
-        public List<DirectoryInfo> GetSubdirectories(string path)
+        public OperationResult Connect()
         {
-            return FileExplorerService.Instance.GetSubdirectories(path);
+            return new OperationResult { Success = true };
         }
 
-        public List<FileInfo> GetFiles(string path)
+        public OperationResult<List<string>> GetLogicalDrives()
         {
-            return FileExplorerService.Instance.GetFiles(path);
+            var drives = FileExplorerService.Instance.GetLogicalDrives();
+            return new OperationResult<List<string>> { Success = true, Response = drives };
         }
 
-        public void DeleteFile(string path)
+        public OperationResult<FileSystemObjectInfo> GetFileSystemObject(string path)
         {
-            FileExplorerService.Instance.DeleteFile(path);
+            return MakeOperation(() => FileExplorerService.Instance.GetFileSystemObject(path));
         }
 
-        public void DeleteDirectory(string path, bool recursive)
+        public OperationResult DeleteFile(string path)
         {
-            FileExplorerService.Instance.DeleteDirectory(path, recursive);
+            return MakeOperation(() => FileExplorerService.Instance.DeleteFile(path));
         }
 
-        public void MoveFile(string src, string dist)
+        public OperationResult DeleteDirectory(string path, bool recursive)
         {
-            FileExplorerService.Instance.MoveFile(src, dist);
+            return MakeOperation(() => FileExplorerService.Instance.DeleteDirectory(path, recursive));
         }
 
-        public void MoveDirectory(string src, string dist)
+        public OperationResult MoveFile(string src, string dist)
         {
-            FileExplorerService.Instance.MoveDirectory(src, dist);
+            return MakeOperation(() => FileExplorerService.Instance.MoveFile(src, dist));
         }
 
-        public void CopyFile(string src, string dist, bool overwrite)
+        public OperationResult MoveDirectory(string src, string dist)
         {
-            FileExplorerService.Instance.CopyFile(src, dist, overwrite);
+            return MakeOperation(() => FileExplorerService.Instance.MoveDirectory(src, dist));
         }
 
-        public void CopyDirectory(string src, string dist, bool copySubDirs, bool overwrite)
+        public OperationResult CopyFile(string src, string dist, bool overwrite)
         {
-            FileExplorerService.Instance.CopyDirectory(src, dist, copySubDirs, overwrite);
+            return MakeOperation(() => FileExplorerService.Instance.CopyFile(src, dist, overwrite));
+        }
+
+        public OperationResult CopyDirectory(string src, string dist, bool copySubDirs, bool overwrite)
+        {
+            return MakeOperation(() => FileExplorerService.Instance.CopyDirectory(src, dist, copySubDirs, overwrite));
         }
     }
 }

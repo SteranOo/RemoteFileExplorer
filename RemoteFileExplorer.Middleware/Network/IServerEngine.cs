@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.ServiceModel;
+using RemoteFileExplorer.Middleware.Data;
 
 namespace RemoteFileExplorer.Middleware.Network
 {
@@ -8,33 +9,30 @@ namespace RemoteFileExplorer.Middleware.Network
     public interface IServerEngine
     {
         [OperationContract]
-        void Connect();
+        OperationResult Connect();
 
         [OperationContract]
-        List<string> GetLogicalDrives();
+        OperationResult<List<string>> GetLogicalDrives();
 
         [OperationContract]
-        List<DirectoryInfo> GetSubdirectories(string path);
+        OperationResult<FileSystemObjectInfo> GetFileSystemObject(string path);
 
         [OperationContract]
-        List<FileInfo> GetFiles(string path);
+        OperationResult DeleteFile(string path);
 
         [OperationContract]
-        void DeleteFile(string path);
+        OperationResult DeleteDirectory(string path, bool recursive);
 
         [OperationContract]
-        void DeleteDirectory(string path, bool recursive);
+        OperationResult MoveFile(string src, string dist);
 
         [OperationContract]
-        void MoveFile(string src, string dist);
+        OperationResult MoveDirectory(string src, string dist);
 
         [OperationContract]
-        void MoveDirectory(string src, string dist);
+        OperationResult CopyFile(string src, string dist, bool overwrite);
 
         [OperationContract]
-        void CopyFile(string src, string dist, bool overwrite);
-
-        [OperationContract]
-        void CopyDirectory(string src, string dist, bool copySubDirs, bool overwrite);
+        OperationResult CopyDirectory(string src, string dist, bool copySubDirs, bool overwrite);
     }
 }
